@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/v1/books
+Content-Type: application/json
+
+{
+"name": " Investidor Inteligente ",
+"pages":  200,
+"chapters": 20,
+"isbn": "0-596-52068-9",
+"publisherName":"Harper Collins",
+"author":{
+    "name":"Benjamin Grahan",
+    "age":28
+}
+}
