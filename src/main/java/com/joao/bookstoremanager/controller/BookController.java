@@ -1,8 +1,11 @@
 package com.joao.bookstoremanager.controller;
 
+import javax.validation.Valid;
+
+import com.joao.bookstoremanager.dto.BookDTO;
 import com.joao.bookstoremanager.dto.MessageResponseDTO;
-import com.joao.bookstoremanager.entity.Book;
-import com.joao.bookstoremanager.repository.BookRepository;
+
+
 import com.joao.bookstoremanager.service.BookService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +27,8 @@ public class BookController {
     }
 
     @PostMapping
-    public MessageResponseDTO create(@RequestBody Book book){
-        return this.bookService.create(book);
+    public MessageResponseDTO create(@RequestBody @Valid BookDTO bookDTO){
+        return this.bookService.create(bookDTO);
     }
     
 }
